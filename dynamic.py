@@ -8,7 +8,7 @@ import utilities as ut
 
 
 def dynamic(graph, d, d_1, paths_pred, init_sensors, infection_times, budget, delay, 
-        noise=0, tol_c=0, gain ='size', approx='det', tested_max=float('INFINITY'), 
+        noise=0, tol_c=1, gain ='size', approx='det', tested_max=float('INFINITY'), 
         real_source=None, online=True):
 
     assert budget >= 1 
@@ -99,8 +99,8 @@ def dynamic(graph, d, d_1, paths_pred, init_sensors, infection_times, budget, de
         if seq_cand_sources[-1] == seq_cand_sources[-2]:
             restricted = True
         
-        print processed
-        print seq_cand_sources[-1], success[-1]
+        #print processed
+        #print seq_cand_sources[-1], success[-1]
 
     time = pres_time - min(infection_times.values())
 
